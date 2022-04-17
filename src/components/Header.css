@@ -1,0 +1,13 @@
+@import '../partials/variables.css';
+
+input,
+select,
+option,
+input::placeholder {
+  padding: 15px;
+  border-radius: 4px;
+  border: 0;
+  background-color: #9fe3e3;
+  color: white;
+  font-weight: 600;
+}
