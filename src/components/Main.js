@@ -11,8 +11,7 @@ const Main = ({ repoName, language, sortBy, order }) => {
   const [data, setData] = useState({});
 
   const fullUrl = `https://api.github.com/search/repositories?q=language:${language}&sort=${sortBy}&order=${order}&page=1&per_page=10`;
-  console.log(fullUrl);
-  console.log(fullUrl);
+  // console.log(fullUrl);
 
   useEffect(() => {
     fetch(fullUrl)
@@ -26,7 +25,7 @@ const Main = ({ repoName, language, sortBy, order }) => {
       .catch((err) => {
         console.log(err);
       });
-  }, []);
+  }, [fullUrl]);
 
   const repos = [];
   if (data.length > 0) {

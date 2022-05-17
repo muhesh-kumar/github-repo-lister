@@ -121,19 +121,23 @@ const RepoLister = () => {
             </select>
             <input type="submit" value="Submit" />
           </div>
+          <div>{repoQueryDetails.repoName}</div>
+          <div>{repoQueryDetails.language}</div>
+          <div>{repoQueryDetails.sortBy}</div>
+          <div>{repoQueryDetails.order}</div>
         </form>
       </header>
       <main>
-        {repoQueryDetails.language &&
+        {/* {repoQueryDetails.language &&
           repoQueryDetails.sortBy &&
-          repoQueryDetails.order && (
-            <Main
-              repoName={repoQueryDetails.repoName}
-              language={repoQueryDetails.language}
-              sortBy={repoQueryDetails.sortBy}
-              order={repoQueryDetails.order}
-            />
-          )}
+          repoQueryDetails.order && ( */}
+        <Main
+          repoName={repoQueryDetails.repoName}
+          language={repoQueryDetails.language}
+          sortBy={repoQueryDetails.sortBy}
+          order={repoQueryDetails.order}
+        />
+        {/* )} */}
       </main>
     </>
   );
