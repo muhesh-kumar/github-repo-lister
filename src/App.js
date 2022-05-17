@@ -1,16 +1,14 @@
-import React from 'react';
-import Header from './components/Header';
+import RepoLister from './components/RepoLister';
 import Main from './components/Main';
+import Footer from './components/Footer';
 
-class App extends React.Component {
-  render() {
-    return (
-      <React.Fragment>
-        <Header />
-        <Main />
-      </React.Fragment>
-    );
-  }
-}
+const App = () => {
+  return (
+    <>
+      <RepoLister />
+      <Footer />
+    </>
+  );
+};
 
 export default App;

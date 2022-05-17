@@ -1,4 +1,3 @@
-import React from 'react';
 import './Repo.css';
 
 const Repo = ({
@@ -13,6 +12,7 @@ const Repo = ({
   const redirectToRepo = () => {
     window.location.href = repoUrl;
   };
+
   const repoCard = (
     <div className="repo-card" onClick={redirectToRepo}>
       <table>
@@ -55,16 +55,6 @@ const Repo = ({
     </div>
   );
   return repoCard;
-  // <div className="repo-card">
-  //   <ol>
-  //     <li>Repo Name: {repoName}</li>
-  //     <li>Description: {description}</li>
-  //     <li>Owner: {ownerName}</li>
-  //     <li>Stars: {starsCount}</li>
-  //     <li>Forks: {numForks}</li>
-  //     <li>{language}</li>
-  //   </ol>
-  // </div>
 };
 
 export default Repo;

@@ -1,8 +1,8 @@
 {
+  "homepage": "https://muhesh-kumar.github.io/github-repo-lister",
   "name": "github-repo-lister",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://muhesh-kumar.github.io/github-repo-lister",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.1.1",
