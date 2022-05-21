@@ -12,3 +12,10 @@ https://api.github.com/search/repositories?q=language:Javascript&sort=stars&orde
 
 // to search based on name
 https://api.github.com/search/repositories?q=full_name:react
+
+
+// for the following link to list all public repos(data: [])
+// const url = 'https://api.github.com/repositories';
+
+// const sampleUrl =
+//   ' https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc&page=1&per_page=10';

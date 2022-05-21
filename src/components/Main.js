@@ -1,17 +1,22 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useContext } from 'react';
+
+import { RepoContext } from '../contexts/RepoContext';
+
 import Repo from './Repo';
 
-// const url = 'https://api.github.com/repositories';
-// const sampleUrl =
-//   ' https://api.github.com/search/repositories?q=language:go&sort=stars&order=desc&page=1&per_page=10';
-
-const Main = ({ repoName, language, sortBy, order }) => {
-  // for first tye of link to list all public repos
-  // data: [],
+const Main = () => {
   const [data, setData] = useState({});
+  const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
-  const fullUrl = `https://api.github.com/search/repositories?q=language:${language}&sort=${sortBy}&order=${order}&page=1&per_page=10`;
+  const { repoQueryDetails } = useContext(RepoContext);
+  const { language, sortBy, order } = repoQueryDetails;
+
+  const fullUrl = `
+    https://api.github.com/search/repositories?q=language:
+    ${language}&sort=${sortBy}&order=${order}&page=${currentPageNumber}&per_page=10
+  `;
   // console.log(fullUrl);
+  let totalPages = 0;
 
   useEffect(() => {
     fetch(fullUrl)
@@ -19,7 +24,9 @@ const Main = ({ repoName, language, sortBy, order }) => {
         return result.json();
       })
       .then((result) => {
-        // console.log(result);
+        totalPages = Math.ceil(result.total_count / 10);
+        console.log(result);
+        console.log(totalPages);
         setData(result);
       })
       .catch((err) => {

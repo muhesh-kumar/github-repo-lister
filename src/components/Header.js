@@ -1,12 +1,16 @@
-import { useState } from 'react';
+import { useContext } from 'react';
+
 import './Header.css';
-import Main from './Main';
+
+import { RepoContext } from '../contexts/RepoContext';
 
 const languages = [
   'C',
   'cpp',
   'Java',
-  'C#',
+  // TODO: need to find the correct language value of C# from github rest api docs
+  // 'C#',
+  'Go',
   'Python',
   'JavaScript',
   'TypeScript',
@@ -71,17 +75,7 @@ const getOrderOptions = () =>
   ));
 
 const RepoLister = () => {
-  const [repoQueryDetails, setRepoQueryDetails] = useState({
-    repoName: null,
-    language: null,
-    sortBy: null,
-    order: null,
-  });
-
-  const handleSubmit = (e) => {
-    console.log('A form was submitted');
-    e.preventDefault();
-  };
+  const { repoQueryDetails, setRepoQueryDetails } = useContext(RepoContext);
 
   const handleChange = (elementName, e) => {
     const updatedRepoQueryDetails = { ...repoQueryDetails };
@@ -93,7 +87,7 @@ const RepoLister = () => {
     <>
       <header className="vertical-container">
         <h1>GitHub Repository Lister</h1>
-        <form onSubmit={handleSubmit}>
+        <form>
           <div className="container">
             <input
               type="text"
@@ -119,26 +113,9 @@ const RepoLister = () => {
             >
               {getOrderOptions()}
             </select>
-            <input type="submit" value="Submit" />
           </div>
-          <div>{repoQueryDetails.repoName}</div>
-          <div>{repoQueryDetails.language}</div>
-          <div>{repoQueryDetails.sortBy}</div>
-          <div>{repoQueryDetails.order}</div>
         </form>
       </header>
-      <main>
-        {/* {repoQueryDetails.language &&
-          repoQueryDetails.sortBy &&
-          repoQueryDetails.order && ( */}
-        <Main
-          repoName={repoQueryDetails.repoName}
-          language={repoQueryDetails.language}
-          sortBy={repoQueryDetails.sortBy}
-          order={repoQueryDetails.order}
-        />
-        {/* )} */}
-      </main>
     </>
   );
 };
