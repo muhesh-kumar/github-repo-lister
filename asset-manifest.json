@@ -1,13 +1,13 @@
 {
   "files": {
-    "main.css": "/github-repo-lister/static/css/main.b5a50be8.css",
-    "main.js": "/github-repo-lister/static/js/main.3df8e4ee.js",
+    "main.css": "/github-repo-lister/static/css/main.3d2b4919.css",
+    "main.js": "/github-repo-lister/static/js/main.c3b57c49.js",
     "index.html": "/github-repo-lister/index.html",
-    "main.b5a50be8.css.map": "/github-repo-lister/static/css/main.b5a50be8.css.map",
-    "main.3df8e4ee.js.map": "/github-repo-lister/static/js/main.3df8e4ee.js.map"
+    "main.3d2b4919.css.map": "/github-repo-lister/static/css/main.3d2b4919.css.map",
+    "main.c3b57c49.js.map": "/github-repo-lister/static/js/main.c3b57c49.js.map"
   },
   "entrypoints": [
-    "static/css/main.b5a50be8.css",
-    "static/js/main.3df8e4ee.js"
+    "static/css/main.3d2b4919.css",
+    "static/js/main.c3b57c49.js"
   ]
 }
