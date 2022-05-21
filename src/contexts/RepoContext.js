@@ -8,6 +8,8 @@ const RepoContextProvider = (props) => {
     language: 'go',
     sortBy: 'stars',
     order: 'desc',
+    currentPageNumber: 1,
+    totalNumberOfPages: 0,
   });
 
   return (

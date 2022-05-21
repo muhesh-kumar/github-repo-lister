@@ -1,15 +1,19 @@
+import RepoContextProvider from './contexts/RepoContext';
+import PageContextProvider from './contexts/PageContext';
+
 import Header from './components/Header';
 import Main from './components/Main';
 import Footer from './components/Footer';
-import RepoContextProvider from './contexts/RepoContext';
 
 const App = () => {
   return (
     <>
       <RepoContextProvider>
         <Header />
-        <Main />
-        <Footer />
+        <PageContextProvider>
+          <Main />
+          <Footer />
+        </PageContextProvider>
       </RepoContextProvider>
     </>
   );

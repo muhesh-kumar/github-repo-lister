@@ -1,21 +1,22 @@
 import { useEffect, useState, useContext } from 'react';
 
 import { RepoContext } from '../contexts/RepoContext';
+import { PageContext } from '../contexts/PageContext';
 
 import Repo from './Repo';
 
 const Main = () => {
   const [data, setData] = useState({});
-  const [currentPageNumber, setCurrentPageNumber] = useState(1);
 
   const { repoQueryDetails } = useContext(RepoContext);
-  const { language, sortBy, order } = repoQueryDetails;
+  const { language, sortBy, order, currentPageNumber } = repoQueryDetails;
+  const { setTotalNumberOfPages } = useContext(PageContext);
 
   const fullUrl = `
     https://api.github.com/search/repositories?q=language:
     ${language}&sort=${sortBy}&order=${order}&page=${currentPageNumber}&per_page=10
   `;
-  // console.log(fullUrl);
+
   let totalPages = 0;
 
   useEffect(() => {
@@ -25,8 +26,7 @@ const Main = () => {
       })
       .then((result) => {
         totalPages = Math.ceil(result.total_count / 10);
-        console.log(result);
-        console.log(totalPages);
+        setTotalNumberOfPages(totalPages);
         setData(result);
       })
       .catch((err) => {
