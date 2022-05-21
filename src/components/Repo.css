@@ -2,6 +2,7 @@
 
 .repo-card {
   display: flex;
+  width: 42rem;
   justify-content: space-between;
   gap: 1rem;
   flex-basis: min-content;
@@ -28,4 +29,10 @@
 
 table {
   border-spacing: 10px;
+}
+
+table,
+tr,
+td {
+  max-width: 42rem;
 }

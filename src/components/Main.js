@@ -15,12 +15,8 @@ const Main = () => {
 
   const fullUrl = `
     https://api.github.com/search/repositories?q=${
-      repoName !== '' ? 'name:' + repoName : ''
-    } language:${language}&
-    sort=${sortBy}&
-    order=${order}&
-    page=${currentPageNumber}&
-    per_page=10
+      repoName !== '' ? 'name:' + repoName + '&' : ''
+    }language:${language}&sort=${sortBy}&order=${order}&page=${currentPageNumber}&per_page=10
   `;
 
   let totalPages = 0;
